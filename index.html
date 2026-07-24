@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="app.css">
+</head>
+
+<body class="bg-gray-50 flex flex-col min-h-screen">
+    <nav class="navBar">
+        <div class="navButtons">
+            <a href="scanner" class="btn">Page </a>
+            <a href="output" class="btn">Output </a>
+        </div>
+    </nav>
+
+    <section id="section1" class="content-block flex-1 flex flex-col items-center justify-center p-4 gap-4">
+        <input 
+            type="text" 
+            id="urlInput" 
+            placeholder="Enter link" 
+            class="w-full max-w-md px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+        >
+        
+        <input 
+            type="text" 
+            id="keyInput" 
+            placeholder="Enter API key" 
+            class="w-full max-w-md px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+        >
+        
+        <button 
+            id="scan" 
+            class="w-full max-w-md bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg shadow transition duration-200"
+        >
+            Scan
+        </button>
+    </section>
+
+    <section id="section2" class="content-block">
+         <pre id="output"></pre> 
+    </section>
+
+    <script type="module">
+        document.getElementById('scan').addEventListener('click', async () => {
+            const urlValue = document.getElementById('urlInput').value;
+            const keyValue = document.getElementById('keyInput').value;
+            if (typeof urlValue != string) throw new Error();
+            
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === "r") {
+                event.preventDefault();
+                nw.Window.get().reload(); 
+            }
+        });
+    </script>
+</body>
+</html>

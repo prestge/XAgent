@@ -1,0 +1,19 @@
+{
+  "name": "XAgent",
+  "version": "1.0.0",
+  "main": "index.html",
+  "chromium-args": "--disable-web-security",
+  "scripts": {
+    "tail-build": "tailwindcss -i ./src/input.css -o ./app.css",
+    "tail-watch": "tailwindcss -i ./src/input.css -o ./app.css --watch",
+    "start": "nw ."
+  },
+  "dependencies": {
+    "axios": "^1.18.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.3",
+    "nw": "^0.92.0",
+    "tailwindcss": "^4.3.3"
+  }
+}
